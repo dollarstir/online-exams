@@ -70,7 +70,7 @@ include 'includes/fetch_records.php';
                         </a>
                     </div>
                     <div class="logo-box">
-                        <a href="./" class="logo-text"><span><img src="kashipara.png" alt="" height="76" width="130"></span></a>
+                        <a href="./" class="logo-text"><span><img src="../assets/images/ex.jpg" alt="" height="76" width="130"></span></a>
                     </div>
 
                     <div class="topmenu-outer">

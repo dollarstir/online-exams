@@ -80,7 +80,7 @@ include 'includes/check_reply.php';
                         </a>
                     </div>
                     <div class="logo-box">
-                        <a href="./" class="logo-text"><span><img src="kashipara.png" alt="" height="76" width="130"></span></a>
+                        <a href="./" class="logo-text"><span><img src="../assets/images/ex.jpg" alt="" height="76" width="130"></span></a>
                     </div>
                     <div class="search-button">
                         <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
@@ -147,7 +147,7 @@ include 'includes/check_reply.php';
                     <ul class="menu accordion-menu">
                         <li><a href="./" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-home"></span><p>Dashboard</p></a></li>
                         <li><a href="departments.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-folder-open"></span><p>Departments</p></a></li>
-                        <li><a href="categories.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-tags"></span><p>Categories</p></a></li>
+                        <li><a href="categories.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-tags"></span><p>Programme</p></a></li>
                         <li class="active"><a href="subject.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-file"></span><p>Subjects</p></a></li>
                         <li><a href="students.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-user"></span><p>Students</p></a></li>
                         <li><a href="examinations.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-book"></span><p>Examinations</p></a></li>
@@ -199,7 +199,7 @@ include 'includes/check_reply.php';
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
-												<th>Category</th>
+												<th>Programme</th>
 												<th>Department</th>
                                                 <th>Status</th>
                                                 <th>Date Registered</th>

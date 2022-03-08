@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <?php include 'includes/check_reply.php'; ?>
+
+<!-- Developed by 
+Frederick Ennin 
+kpin463@gmail.com
++233556676471
+ -->
 <html>
     
 <head>
 
-        <title>OES | Reset Password</title>
+        <title>Oline Exams| Reset Password</title>
         
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta charset="UTF-8">
@@ -34,7 +40,7 @@
      <body <?php if ($ms == "1") { print 'onload="myFunction()"'; } ?>  class="page-login">
         <main class="page-content">
             <div class="page-inner">
-            <img src="kashipara.png" alt="" height="100" width="250">   
+            <img src="../assets/images/ex.jpg" alt="" height="100" width="250">   
                 <div id="main-wrapper">
                     <div class="row">
                         <div class="col-md-4 center">

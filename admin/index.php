@@ -75,7 +75,7 @@ include 'includes/fetch_records.php';
                         </a>
                     </div>
                     <div class="logo-box">
-                        <a href="./" class="logo-text"><img src="kashipara.png" alt="" height="76" width="130"></span></a>
+                        <a href="./" class="logo-text"><img src="../assets/images/ex.jpg" alt="" height="76" width="130"></span></a>
                     </div>
                     <div class="search-button">
                         <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
@@ -145,6 +145,8 @@ include 'includes/fetch_records.php';
                         <li><a href="categories.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-tags"></span><p>Categories</p></a></li>
                         <li><a href="subject.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-file"></span><p>Subjects</p></a></li>
                         <li><a href="students.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-user"></span><p>Students</p></a></li>
+
+                         <li><a href="lecturer.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-user"></span><p>Lecturer</p></a></li>
                         <li><a href="examinations.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-book"></span><p>Examinations</p></a></li>
                         <li><a href="questions.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-question-sign"></span><p>Questions</p></a></li>
                         <li><a href="notice.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-th-list"></span><p>Notice</p></a></li>
@@ -226,7 +228,7 @@ include 'includes/fetch_records.php';
                                 <div class="panel-body">
                                     <div class="info-box-stats">
                                         <p class="counter"><?php echo number_format($categories); ?></p>
-                                        <span class="info-box-title">CATEGORIES <?php echo "$fp $pp"; ?></span>
+                                        <span class="info-box-title">PROGRAMMES <?php echo "$fp $pp"; ?></span>
                                     </div>
                                     <div class="info-box-icon">
                                         <i class="icon-tag"></i>

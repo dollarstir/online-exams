@@ -104,6 +104,12 @@ if ($conn->query($sql) === TRUE) {
         <script src="../assets/plugins/offcanvasmenueffects/js/snap.svg-min.js"></script>
         
     </head>
+    <style>
+        .attempted_question {
+            background: green !important;
+            color: white !important;
+        }
+    </style>
 	<body <?php if ($ms == "1") { print 'onload="myFunction()"'; } ?>   class="page-header-fixed page-horizontal-bar" >
         <div class="overlay"></div>
         <div class="menu-wrap">
@@ -247,7 +253,7 @@ if ($conn->query($sql) === TRUE) {
                                             if ($type == "FB") {
 											if ($qno == "1") {
 											print '
-											<div role="tabpanel" class="tab-pane active fade in" id="tab'.$qno.'">
+											<div target="'.$qsid.'" role="tabpanel" class="tab-pane active fade in questionEffect" id="tab'.$qno.'">
                                              <p><b>'.$qno.'.</b> '.$qs.'</p>
 											 <p><input type="text" name="an'.$qno.'"  class="form-control" placeholder="Enter your answer" autocomplete="off">
 											 <input type="hidden" name="qst'.$qno.'" value="'.base64_encode($qs).'">
@@ -256,7 +262,7 @@ if ($conn->query($sql) === TRUE) {
 											';	
 											}else{
 											print '
-											<div role="tabpanel" class="tab-pane fade in" id="tab'.$qno.'">
+											<div target="'.$qsid.'" role="tabpanel" class="tab-pane fade in questionEffect" id="tab'.$qno.'">
                                              <p><b>'.$qno.'.</b> '.$qs.'</p>
 											 <p><input type="text" name="an'.$qno.'"  class="form-control" placeholder="Enter your answer" autocomplete="off">
 					                         <input type="hidden" name="qst'.$qno.'" value="'.base64_encode($qs).'">
@@ -271,7 +277,7 @@ if ($conn->query($sql) === TRUE) {
 											if ($qno == "1") {
 
 											print '
-											<div role="tabpanel" class="tab-pane active fade in" id="tab'.$qno.'">
+											<div target="'.$qsid.'" role="tabpanel" class="tab-pane active fade in questionEffect" id="tab'.$qno.'">
                                              <p><b>'.$qno.'.</b> '.$qs.'</p>
 											 <p><input type="radio" name="an'.$qno.'"  class="form-control" value="'.$op1.'"> '.$op1.'</p>
 											 <p><input type="radio" name="an'.$qno.'"  class="form-control" value="'.$op2.'"> '.$op2.'</p>
@@ -283,7 +289,7 @@ if ($conn->query($sql) === TRUE) {
 											';	
 											}else{
 											print '
-											<div role="tabpanel" class="tab-pane fade in" id="tab'.$qno.'">
+											<div target="'.$qsid.'" role="tabpanel" class="tab-pane fade in questionEffect" id="tab'.$qno.'">
                                              <p><b>'.$qno.'.</b> '.$qs.'</p>
 											 <p><input type="radio" name="an'.$qno.'"  class="form-control" value="'.$op1.'"> '.$op1.'</p>
 											 <p><input type="radio" name="an'.$qno.'"  class="form-control" value="'.$op2.'"> '.$op2.'</p>
@@ -322,9 +328,9 @@ if ($conn->query($sql) === TRUE) {
                                             while($row = $result->fetch_assoc()) {
 											$total_questions++;
 											if ($qno == "1") {
-											print '<li role="presentation" class="active"><a href="#tab'.$qno.'" role="tab" data-toggle="tab">'.$qno.'</a></li>';	
+											print '<li role="presentation"  class="active"><a id="'.$row["question_id"].'" href="#tab'.$qno.'" role="tab" data-toggle="tab">'.$qno.'</a></li>';	
 											}else{
-											print '<li role="presentation"><a href="#tab'.$qno.'" role="tab" data-toggle="tab">'.$qno.'</a></li>';		
+											print '<li role="presentation"><a id="'.$row["question_id"].'" href="#tab'.$qno.'" role="tab" data-toggle="tab">'.$qno.'</a></li>';		
 											}
 
 											$qno = $qno + 1;
@@ -374,6 +380,41 @@ if ($conn->query($sql) === TRUE) {
         <script src="../assets/plugins/waves/waves.min.js"></script>
         <script src="../assets/plugins/3d-bold-navigation/js/main.js"></script>
         <script src="../assets/js/modern.min.js"></script>
+
+
+        <script>
+            $(document).ready(function () {
+                $(document).on("change click keyup", ".questionEffect input", function () {
+                    //console.log($(this).parents(".questionEffect"));
+                    var attempted = false;
+                    allInputs = $(this).parents(".questionEffect").find("input");
+
+                    allInputs.each(function(index, input) {
+                        if($(input).is(":checked")) {
+                            attempted = true;
+                        }
+
+                    })
+                          console.log(($(this).val()).match(/\S/));
+
+
+                    if(($(this).val()).match(/\S/g) != null) {
+                        attempted = true;
+                    }
+
+
+                    var target =  $(this).parents(".questionEffect").attr("target");
+
+                    if(attempted) {
+                      $("#"+target).addClass("attempted_question");
+                    } else {
+                        $("#"+target).removeClass("attempted_question");
+                    }
+
+
+                })
+            })
+        </script>
         
 				<script>
 function myFunction() {
